@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="روابط المساعدات - غزة | الدليل الموحد لروابط تسجيل وتحديث بيانات المساعدات الإنسانية والغاز">
+    <title>روابط المساعدات - غزة</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Cairo) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f8fafc;
+            scroll-behavior: smooth;
+        }
+        /* تصميم البطاقة المطابق تماماً للصورة */
+        .aid-card {
+            background: #ffffff;
+            border: 2px solid #22c55e;
+            border-radius: 16px;
+            position: relative;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.06);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+        .aid-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.12);
+        }
+        .tag-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            background-color: #f0fdf4;
+            color: #15803d;
+            border: 1px solid #bbf7d0;
+            border-radius: 9999px;
+        }
+        .value-box {
+            background-color: #f0fdf4;
+            border: 1px dashed #86efac;
+            border-radius: 12px;
+            text-align: center;
+            padding: 10px;
+            margin: 12px 0;
+        }
+        .register-btn {
+            background-color: #16a34a;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: background-color 0.2s;
+            width: 100%;
+        }
+        .register-btn:hover {
+            background-color: #15803d;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- الهيدر العلوي (مطابق للصورة تماماً) -->
+    <header class="bg-white shadow-sm sticky top-0 z-40 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            
+            <div class="flex items-center gap-6 font-bold text-slate-700 text-sm md:text-base">
+                <a href="#" class="text-emerald-600 hover:text-emerald-700 transition">الرئيسية</a>
+                <a href="#about" class="text-slate-600 hover:text-emerald-600 transition">عن الموقع</a>
+                <a href="#contact" class="text-slate-600 hover:text-emerald-600 transition">تواصل معنا</a>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <span class="font-extrabold text-slate-800 text-base md:text-lg">روابط المساعدات - غزة</span>
+                <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-700 font-bold shadow-sm">
+                    <i class="fa-solid fa-hands-holding-child text-lg"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- شريط البحث والفلترة -->
+    <section class="max-w-7xl mx-auto px-4 pt-6">
+        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 flex flex-col md:flex-row gap-4 justify-between items-center">
+            <div class="flex flex-wrap gap-2 text-xs font-bold w-full md:w-auto">
+                <button onclick="filterCategory('all')" class="px-4 py-2 rounded-xl bg-slate-800 text-white hover:opacity-90 transition">الكل</button>
+                <button onclick="filterCategory('official')" class="px-4 py-2 rounded-xl bg-green-100 text-green-800 hover:bg-green-200 transition">التسجيلات الرسمية</button>
+                <button onclick="filterCategory('relief')" class="px-4 py-2 rounded-xl bg-orange-100 text-orange-800 hover:bg-orange-200 transition">المساعدات والإغاثة</button>
+                <button onclick="filterCategory('orphans')" class="px-4 py-2 rounded-xl bg-red-100 text-red-800 hover:bg-red-200 transition">رعاية الأيتام</button>
+            </div>
+            <div class="relative w-full md:w-72">
+                <input type="text" id="searchInput" onkeyup="searchCards()" placeholder="ابحث عن مساعدة أو جهة..." 
+                    class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2 text-sm focus:outline-none focus:border-emerald-500">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-400"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- المحتوى الرئيسي (شبكة البطاقات المطابقة للصورة) -->
+    <main class="max-w-7xl mx-auto px-4 py-8">
+
+        <!-- مساحة إعلانية متوافقة مع أدسنس -->
+        <div class="bg-white border border-dashed border-slate-300 rounded-2xl p-6 text-center text-slate-400 text-sm mb-8">
+            مساحة إعلانية مخصصة (Google AdSense)
+        </div>
+
+        <section id="cards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- يتم تعبئة البطاقات هنا ديناميكياً -->
+        </section>
+
+        <!-- مساحة إعلانية ثانية -->
+        <div class="bg-white border border-dashed border-slate-300 rounded-2xl p-6 text-center text-slate-400 text-sm mt-8">
+            مساحة إعلانية مخصصة (Google AdSense)
+        </div>
+
+    </main>
+
+    <!-- الفوتر -->
+    <footer class="bg-white border-t border-slate-200 mt-12 py-6 px-4 text-center text-xs text-slate-500">
+        جميع الروابط المذكورة هي الروابط الرسمية المعتمدة للمؤسسات في قطاع غزة. © 2026
+    </footer>
+
+    <!-- كود الجافاسكريبت وبناء البطاقات -->
+    <script>
+        const aidLinksData = [
+            {
+                id: "wfp-registration",
+                title: "برنامج الأغذية العالمي",
+                subTitle: "World Food Programme (WFP)",
+                desc: "توفير مساعدات نقدية وصلات غذائية للأسر المحتاجة",
+                tags: ['<i class="fa-solid fa-coins"></i> مساعدات نقدية', '<i class="fa-solid fa-basket-shopping"></i> مساعدات غذائية'],
+                value: "أكواد نقدية + سلة غذائية",
+                url: "https://pal.beneficiaryregistration.cbt.wfp.org/form/consent",
+                category: "relief"
+            },
+            {
+                id: "alsanabel-orphans",
+                title: "قرية السنابل لرعاية الأيتام",
+                subTitle: "Al-Sanabel Orphan Village",
+                desc: "توفير الرعاية الشاملة والدعم المعيشي والتعليمي للأسر والأيتام",
+                tags: ['<i class="fa-solid fa-child-reaching"></i> كفالة أيتام', '<i class="fa-solid fa-heart"></i> مساعدات إنسانية'],
+                value: "رعاية وكفالة شهرية",
+                url: "https://aid.alsanabel.org/public/registration",
+                category: "orphans"
+            },
+            {
+                id: "kotof-ngo",
+                title: "جمعية قطوف الخير",
+                subTitle: "Kotof Al-Khair Society",
+                desc: "توفير المساعدات الإغاثية الطارئة والطرود الغذائية للأسر المتضررة",
+                tags: ['<i class="fa-solid fa-box-open"></i> طرود غذائية', '<i class="fa-solid fa-hands-holding"></i> إغاثة عاجلة'],
+                value: "طرود ومساعدات إغاثية",
+                url: "https://aid.kotof.org/public/index.php/registration",
+                category: "relief"
+            },
+            {
+                id: "central-aid-system",
+                title: "النظام المركزي للمساعدات",
+                subTitle: "Central Aid System",
+                desc: "بوابة مركزية لتسجيل ومتابعة المساعدات الإنسانية في قطاع غزة",
+                tags: ['<i class="fa-solid fa-building-columns"></i> بوابة رسمية', '<i class="fa-solid fa-user-check"></i> تسجيل وتحديث'],
+                value: "خدمات تسجيل مركزية",
+                url: "https://egaza.org/Home/Login",
+                category: "official"
+            },
+            {
+                id: "fpya-ngo",
+                title: "جمعية الفجر الشبابي الفلسطيني",
+                subTitle: "Al-Fajr Palestinian Youth Society",
+                desc: "توفير مساعدات للشباب والأسر المحتاجة والمتضررة",
+                tags: ['<i class="fa-solid fa-users"></i> دعم شبابي', '<i class="fa-solid fa-hand-holding-heart"></i> مساعدات طارئة'],
+                value: "مساعدات إنسانية متنوعة",
+                url: "https://home.fpya.ps/",
+                category: "official"
+            },
+            {
+                id: "saudi-cultural-center",
+                title: "المركز السعودي الثقافي",
+                subTitle: "Saudi Cultural Center",
+                desc: "تحديث بيانات المستفيدين لمتابعة الخدمات والبرامج الإنسانية",
+                tags: ['<i class="fa-solid fa-landmark"></i> تحديث بيانات', '<i class="fa-solid fa-circle-check"></i> مستفيدين'],
+                value: "تحديث بيانات رسمية",
+                url: "https://portal.ksach.org/beneficial-update",
+                category: "official"
+            },
+            {
+                id: "orphan-institute",
+                title: "معهد الأيتام",
+                subTitle: "Orphan Institute - Gaza",
+                desc: "التسجيل في برامج الرعاية والتعليم وكفالة الأيتام",
+                tags: ['<i class="fa-solid fa-child"></i> رعاية الأيتام', '<i class="fa-solid fa-graduation-cap"></i> دعم تعليمي'],
+                value: "كفالة ورعاية تعليمية",
+                url: "https://docs.google.com/forms/d/e/1FAIpQLSdD6X9dZhA7uXR9vitQtDlPsWQpFas-_-Ltw-QWmUqKdC2HZQ/viewform",
+                category: "orphans"
+            },
+            {
+                id: "saiid-ngo",
+                title: "جمعية ساعد للتنمية الاجتماعية",
+                subTitle: "Saiid Association for Social Development",
+                desc: "طلب المساعدات الإنسانية والإغاثية للأسر المحتاجة",
+                tags: ['<i class="fa-solid fa-hands-holding"></i> إغاثة ومساعدات', '<i class="fa-solid fa-people-roof"></i> أسر متضررة'],
+                value: "مساعدات إغاثية طارئة",
+                url: "https://forms.saiid.org/aid-form",
+                category: "relief"
+            },
+            {
+                id: "fares-alshahm",
+                title: "عملية الفارس الشهم",
+                subTitle: "Al-Fares Al-Shahm Program",
+                desc: "تسجيل ومتابعة الخدمات والمساعدات الإنسانية الإمارتية",
+                tags: ['<i class="fa-solid fa-shield-halved"></i> خدمات رسمية', '<i class="fa-solid fa-box"></i> طرود وإغاثة'],
+                value: "مساعدات إماراتية طارئة",
+                url: "https://aid.alfaresalshahm.com/sso/login",
+                category: "official"
+            },
+            {
+                id: "gas-register",
+                title: "توزيع الغاز في قطاع غزة",
+                subTitle: "E-Gaza Gas Registration",
+                desc: "رابط تسجيل ومتابعة استلام حصص الغاز المنزلي وتحديث البيانات",
+                tags: ['<i class="fa-solid fa-fire-flame-curved"></i> غاز منزلي', '<i class="fa-solid fa-pen-to-square"></i> تسجيل حصص'],
+                value: "حصص الغاز المنزلي",
+                url: "https://e-gaza.com/login",
+                category: "official"
+            },
+            {
+                id: "tarahum-uae",
+                title: "حملة تراحم - من أجل غزة",
+                subTitle: "Tarahum for Gaza Campaign",
+                desc: "مبادرة لطلب مساعدة إماراتية طارئة للنازحين والمواطنين",
+                tags: ['<i class="fa-solid fa-hand-holding-heart"></i> مساعدة إماراتية', '<i class="fa-solid fa-tent"></i> نازحين'],
+                value: "مساعدات طارئة عاجلة",
+                url: "https://docs.google.com/forms/d/e/1FAIpQLSdzvoCy51zX1QsO-bDz9cahAKcZLLoQArvl_JCQ6N6YscyZQ/viewform",
+                category: "relief"
+            },
+            {
+                id: "reach-orphans",
+                title: "مؤسسة Reach (الناجي الوحيد)",
+                subTitle: "Reach Foundation - Gaza",
+                desc: "برنامج كفالة الأيتام وتوفير الدعم المعيشي والتعليمي",
+                tags: ['<i class="fa-solid fa-hands-holding-child"></i> كفالة أيتام', '<i class="fa-solid fa-graduation-cap"></i> تعليم'],
+                value: "كفالة ورعاية معيشية",
+                url: "https://www.reach.ps/",
+                category: "orphans"
+            },
+            {
+                id: "health-ministry",
+                title: "وزارة الصحة الفلسطينية",
+                subTitle: "Ministry of Health",
+                desc: "تحديث بيانات الجرحى والمصابين لمتابعة الخدمات العلاجية",
+                tags: ['<i class="fa-solid fa-notes-medical"></i> جرحى ومصابين', '<i class="fa-solid fa-hospital"></i> رعاية صحية'],
+                value: "متابعة الخدمات الطبية",
+                url: "https://www.moh.gov.ps/",
+                category: "official"
+            },
+            {
+                id: "nour-life",
+                title: "مؤسسة نور الحياة",
+                subTitle: "Nour Al-Life Foundation",
+                desc: "تقديم المساعدات الإنسانية والصحية والدعم النفسي للنساء والأطفال",
+                tags: ['<i class="fa-solid fa-child-reaching"></i> نساء وأطفال', '<i class="fa-solid fa-heart-pulse"></i> دعم صحي'],
+                value: "مساعدات نسائية وطفولة",
+                url: "https://www.google.com/",
+                category: "official"
+            },
+            {
+                id: "newborns-register",
+                title: "حملة تسجيل الأطفال المولودين",
+                subTitle: "Newborns Registration",
+                desc: "تسهيل إدراج الأطفال المولودين حديثاً في كشوفات المساعدات",
+                tags: ['<i class="fa-solid fa-baby"></i> مواليد جدد', '<i class="fa-solid fa-list-check"></i> كشوفات غذائية'],
+                value: "إضافة مواليد جدد",
+                url: "https://www.mosd.gov.ps/",
+                category: "official"
+            },
+            {
+                id: "crs-aid",
+                title: "الإغاثة الكاثوليكية (CRS)",
+                subTitle: "Catholic Relief Services",
+                desc: "دليل ومتابعة استلام الطرود الغذائية عبر برنامج الغذاء العالمي",
+                tags: ['<i class="fa-solid fa-box-archive"></i> كرتونة بنية', '<i class="fa-solid fa-truck-fast"></i> طرود غذائية'],
+                value: "طرود غذائية معتمدة",
+                url: "https://palestine.wfp.org/",
+                category: "relief"
+            },
+            {
+                id: "fade-ngo",
+                title: "جمعية المستقبل للتنمية والبيئة",
+                subTitle: "FADE Association",
+                desc: "تسجيل الأسر المتضررة والنازحة للاستفادة من المساعدات العاجلة",
+                tags: ['<i class="fa-solid fa-hand-holding-heart"></i> إغاثة عاجلة', '<i class="fa-solid fa-people-group"></i> أسر متضررة'],
+                value: "مساعدات إنسانية طارئة",
+                url: "https://www.google.com/",
+                category: "relief"
+            },
+            {
+                id: "ajyal-health",
+                title: "جمعية أجيال للإبداع والتطوير",
+                subTitle: "Ajyal Association",
+                desc: "برنامج تعزيز الصحة الإنجابية ومساعدات الحوامل والمرضعات",
+                tags: ['<i class="fa-solid fa-hospital-user"></i> صحة الحوامل', '<i class="fa-solid fa-shield-heart"></i> دعم صحي'],
+                value: "رعاية الحوامل والمرضعات",
+                url: "https://www.google.com/",
+                category: "official"
+            },
+            {
+                id: "daraj-pregnant",
+                title: "مركز صحي الدرج",
+                subTitle: "Daraj Health Center",
+                desc: "تسجيل السيدات الحوامل للاستفادة من المساعدات المادية والصحية",
+                tags: ['<i class="fa-solid fa-user-nurse"></i> مركز صحي', '<i class="fa-solid fa-coins"></i> مساعدات مادية'],
+                value: "دعم مادي وصحي للحوامل",
+                url: "https://www.google.com/",
+                category: "relief"
+            },
+            {
+                id: "egypt-north",
+                title: "اللجنة المصرية لإغاثة غزة",
+                subTitle: "Egyptian Committee for Aid",
+                desc: "طلب الحصول على إغاثة إنسانية وطرود غذائية لأهالي قطاع غزة",
+                tags: ['<i class="fa-solid fa-flag"></i> اللجنة المصرية', '<i class="fa-solid fa-box"></i> طرود إغاثية'],
+                value: "طرود وإغاثة إنسانية",
+                url: "https://murafah.org/aid-system/public/aid/food-check",
+                category: "relief"
+            },
+            {
+                id: "rafah-food",
+                title: "بلدية رفح - الطرود الغذائية",
+                subTitle: "Rafah Municipality",
+                desc: "التحقق برقم الهوية من مكان وتوقيت استلام الطرود الغذائية",
+                tags: ['<i class="fa-solid fa-location-dot"></i> بلدية رفح', '<i class="fa-solid fa-magnifying-glass"></i> تحقق بالهوية'],
+                value: "فحص وتحديد مواعيد الاستلام",
+                url: "https://www.rafah.ps/",
+                category: "relief"
+            },
+            {
+                id: "national-system",
+                title: "المنظومة الوطنية للمستفيدين",
+                subTitle: "National Beneficiaries System",
+                desc: "البوابة الرسمية لوزارة التنمية لتحديث بيانات الأسر المتضررة والنازحة",
+                tags: ['<i class="fa-solid fa-building-columns"></i> بوابة حكومية', '<i class="fa-solid fa-pen"></i> تحديث بيانات'],
+                value: "تحديث وتثبيت البيانات",
+                url: "https://services.citizen.egaza.ps/login",
+                category: "official"
+            },
+            {
+                id: "unrwa-check",
+                title: "وكالة الغوث (الأونروا - UNRWA)",
+                subTitle: "UNRWA - Food Rations",
+                desc: "فحص وتحديث بيانات كابونة الوكالة والدقيق للأسر اللاجئة",
+                tags: ['<i class="fa-solid fa-wheat-awn"></i> كابونة الطحين', '<i class="fa-solid fa-id-card"></i> فحص برقم الهوية'],
+                value: "كابونة الدقيق والمساعدات",
+                url: "https://www.unrwa.org/",
+                category: "official"
+            }
+        ];
+
+        function renderCards(filter = 'all', searchQuery = '') {
+            const container = document.getElementById('cards-grid');
+            container.innerHTML = '';
+
+            const filteredData = aidLinksData.filter(item => {
+                const matchesCategory = (filter === 'all') || (item.category === filter);
+                const matchesSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                                      item.subTitle.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchesCategory && matchesSearch;
+            });
+
+            if (filteredData.length === 0) {
+                container.innerHTML = `<div class="col-span-full text-center py-16 text-slate-400 font-bold">لا توجد روابط مطابقة للبحث حالياً.</div>`;
+                return;
+            }
+
+            filteredData.forEach(item => {
+                const tagsHTML = item.tags.map(tag => `<span class="tag-pill">${tag}</span>`).join('');
+
+                const cardHTML = `
+                    <div class="aid-card p-5">
+                        <div>
+                            <!-- اسم الجهة بالعربي والإنكليزي -->
+                            <div class="text-center mb-4 border-b border-slate-100 pb-3">
+                                <h3 class="font-extrabold text-slate-900 text-base md:text-lg mb-1">${item.title}</h3>
+                                <p class="text-xs text-slate-400 font-semibold tracking-wide">${item.subTitle}</p>
+                            </div>
+
+                            <!-- الوصف -->
+                            <p class="text-xs text-slate-600 text-center leading-relaxed mb-4 min-h-[36px]">
+                                ${item.desc}
+                            </p>
+
+                            <!-- الوسوم الدائرية -->
+                            <div class="flex flex-wrap justify-center gap-1.5 mb-2">
+                                ${tagsHTML}
+                            </div>
+
+                            <!-- صندوق قيمة المساعدة -->
+                            <div class="value-box">
+                                <span class="block text-[10px] text-slate-400 font-bold uppercase tracking-wider mb-0.5">قيمة المساعدة</span>
+                                <span class="text-xs font-bold text-emerald-700">${item.value}</span>
+                            </div>
+                        </div>
+
+                        <!-- زر التسجيل المباشر -->
+                        <div class="pt-2">
+                            <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="register-btn shadow-sm">
+                                <span>التسجيل المباشر</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                `;
+                container.insertAdjacentHTML('beforeend', cardHTML);
+            });
+        }
+
+        let currentFilter = 'all';
+        function filterCategory(cat) {
+            currentFilter = cat;
+            renderCards(cat, document.getElementById('searchInput').value);
+        }
+
+        function searchCards() {
+            renderCards(currentFilter, document.getElementById('searchInput').value);
+        }
+
+        window.onload = () => renderCards();
+    </script>
+</body>
+</html>
